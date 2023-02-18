@@ -20,7 +20,10 @@ class LoginViewController: UIViewController {
         guard let password = passwordTextField.text else { return }
         Auth.auth().signIn(withEmail: email, password: password) { firebaseResult, error in
             if let e = error {
-                
+                // create alert box to show error
+                let alert = UIAlertController(title: "Error", message: e.localizedDescription, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true)
             }
             else {
                 // Go to home screen

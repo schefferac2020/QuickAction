@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1231F83129A0BC4500D07FF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1231F83029A0BC4500D07FF2 /* GoogleService-Info.plist */; };
 		1231F83329A0CCF000D07FF2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1231F83229A0CCEF00D07FF2 /* LoginViewController.swift */; };
+		126FA8FA29A13D7C0045DD34 /* AmanStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 126FA8F929A13D7C0045DD34 /* AmanStoryboard.storyboard */; };
 		12C41C9029A0DA1D002493B5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C41C8F29A0DA1D002493B5 /* RegisterViewController.swift */; };
 		1324A58D2139548068766DF8 /* Pods_QuickAction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B869A61A711387937179F04 /* Pods_QuickAction.framework */; };
 		C3A972F529A0A7D9002FDDCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A972F429A0A7D9002FDDCE /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		1231F83029A0BC4500D07FF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1231F83229A0CCEF00D07FF2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		126FA8F929A13D7C0045DD34 /* AmanStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AmanStoryboard.storyboard; sourceTree = "<group>"; };
 		12C41C8F29A0DA1D002493B5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		1D0F7A25153E98ABDA1A6864 /* Pods-QuickAction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickAction.release.xcconfig"; path = "Target Support Files/Pods-QuickAction/Pods-QuickAction.release.xcconfig"; sourceTree = "<group>"; };
 		5B869A61A711387937179F04 /* Pods_QuickAction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickAction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +98,7 @@
 				C3A9730229A0A7DB002FDDCE /* Info.plist */,
 				1231F83029A0BC4500D07FF2 /* GoogleService-Info.plist */,
 				1231F83229A0CCEF00D07FF2 /* LoginViewController.swift */,
+				126FA8F929A13D7C0045DD34 /* AmanStoryboard.storyboard */,
 			);
 			path = QuickAction;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				1231F83129A0BC4500D07FF2 /* GoogleService-Info.plist in Resources */,
 				C3A972FE29A0A7DB002FDDCE /* Assets.xcassets in Resources */,
 				C3A972FC29A0A7D9002FDDCE /* Main.storyboard in Resources */,
+				126FA8FA29A13D7C0045DD34 /* AmanStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
