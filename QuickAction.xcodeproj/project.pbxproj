@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1231F83129A0BC4500D07FF2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1231F83029A0BC4500D07FF2 /* GoogleService-Info.plist */; };
+		1231F83329A0CCF000D07FF2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1231F83229A0CCEF00D07FF2 /* LoginViewController.swift */; };
+		12C41C9029A0DA1D002493B5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C41C8F29A0DA1D002493B5 /* RegisterViewController.swift */; };
 		1324A58D2139548068766DF8 /* Pods_QuickAction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B869A61A711387937179F04 /* Pods_QuickAction.framework */; };
 		C3A972F529A0A7D9002FDDCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A972F429A0A7D9002FDDCE /* AppDelegate.swift */; };
 		C3A972F729A0A7D9002FDDCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A972F629A0A7D9002FDDCE /* SceneDelegate.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1231F83029A0BC4500D07FF2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1231F83229A0CCEF00D07FF2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		12C41C8F29A0DA1D002493B5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		1D0F7A25153E98ABDA1A6864 /* Pods-QuickAction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickAction.release.xcconfig"; path = "Target Support Files/Pods-QuickAction/Pods-QuickAction.release.xcconfig"; sourceTree = "<group>"; };
 		5B869A61A711387937179F04 /* Pods_QuickAction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickAction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E6297187F205D13C65313C /* Pods-QuickAction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickAction.debug.xcconfig"; path = "Target Support Files/Pods-QuickAction/Pods-QuickAction.debug.xcconfig"; sourceTree = "<group>"; };
@@ -56,7 +62,6 @@
 				A7E6297187F205D13C65313C /* Pods-QuickAction.debug.xcconfig */,
 				1D0F7A25153E98ABDA1A6864 /* Pods-QuickAction.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -85,9 +90,12 @@
 				C3A972F629A0A7D9002FDDCE /* SceneDelegate.swift */,
 				C3A972F829A0A7D9002FDDCE /* ViewController.swift */,
 				C3A972FA29A0A7D9002FDDCE /* Main.storyboard */,
+				12C41C8F29A0DA1D002493B5 /* RegisterViewController.swift */,
 				C3A972FD29A0A7DB002FDDCE /* Assets.xcassets */,
 				C3A972FF29A0A7DB002FDDCE /* LaunchScreen.storyboard */,
 				C3A9730229A0A7DB002FDDCE /* Info.plist */,
+				1231F83029A0BC4500D07FF2 /* GoogleService-Info.plist */,
+				1231F83229A0CCEF00D07FF2 /* LoginViewController.swift */,
 			);
 			path = QuickAction;
 			sourceTree = "<group>";
@@ -153,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3A9730129A0A7DB002FDDCE /* LaunchScreen.storyboard in Resources */,
+				1231F83129A0BC4500D07FF2 /* GoogleService-Info.plist in Resources */,
 				C3A972FE29A0A7DB002FDDCE /* Assets.xcassets in Resources */,
 				C3A972FC29A0A7D9002FDDCE /* Main.storyboard in Resources */,
 			);
@@ -207,6 +216,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1231F83329A0CCF000D07FF2 /* LoginViewController.swift in Sources */,
+				12C41C9029A0DA1D002493B5 /* RegisterViewController.swift in Sources */,
 				C3A972F929A0A7D9002FDDCE /* ViewController.swift in Sources */,
 				C3A972F529A0A7D9002FDDCE /* AppDelegate.swift in Sources */,
 				C3A972F729A0A7D9002FDDCE /* SceneDelegate.swift in Sources */,
