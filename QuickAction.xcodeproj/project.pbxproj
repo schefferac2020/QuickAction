@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1324A58D2139548068766DF8 /* Pods_QuickAction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B869A61A711387937179F04 /* Pods_QuickAction.framework */; };
 		C3A972F529A0A7D9002FDDCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A972F429A0A7D9002FDDCE /* AppDelegate.swift */; };
 		C3A972F729A0A7D9002FDDCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A972F629A0A7D9002FDDCE /* SceneDelegate.swift */; };
 		C3A972F929A0A7D9002FDDCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A972F829A0A7D9002FDDCE /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D0F7A25153E98ABDA1A6864 /* Pods-QuickAction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickAction.release.xcconfig"; path = "Target Support Files/Pods-QuickAction/Pods-QuickAction.release.xcconfig"; sourceTree = "<group>"; };
+		5B869A61A711387937179F04 /* Pods_QuickAction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickAction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7E6297187F205D13C65313C /* Pods-QuickAction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickAction.debug.xcconfig"; path = "Target Support Files/Pods-QuickAction/Pods-QuickAction.debug.xcconfig"; sourceTree = "<group>"; };
 		C3A972F129A0A7D9002FDDCE /* QuickAction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickAction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A972F429A0A7D9002FDDCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3A972F629A0A7D9002FDDCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1324A58D2139548068766DF8 /* Pods_QuickAction.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21EB8141DF5E566CC472173E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B869A61A711387937179F04 /* Pods_QuickAction.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		945CC6F4F45C06D2C5A63DDD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A7E6297187F205D13C65313C /* Pods-QuickAction.debug.xcconfig */,
+				1D0F7A25153E98ABDA1A6864 /* Pods-QuickAction.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C3A972E829A0A7D9002FDDCE = {
 			isa = PBXGroup;
 			children = (
 				C3A972F329A0A7D9002FDDCE /* QuickAction */,
 				C3A972F229A0A7D9002FDDCE /* Products */,
+				945CC6F4F45C06D2C5A63DDD /* Pods */,
+				21EB8141DF5E566CC472173E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C3A9730529A0A7DB002FDDCE /* Build configuration list for PBXNativeTarget "QuickAction" */;
 			buildPhases = (
+				B3A2CDD732512043C7A87560 /* [CP] Check Pods Manifest.lock */,
 				C3A972ED29A0A7D9002FDDCE /* Sources */,
 				C3A972EE29A0A7D9002FDDCE /* Frameworks */,
 				C3A972EF29A0A7D9002FDDCE /* Resources */,
+				6C71C26C611BC7ACD95ABA70 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6C71C26C611BC7ACD95ABA70 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuickAction/Pods-QuickAction-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-QuickAction/Pods-QuickAction-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-QuickAction/Pods-QuickAction-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B3A2CDD732512043C7A87560 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-QuickAction-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C3A972ED29A0A7D9002FDDCE /* Sources */ = {
@@ -282,6 +351,7 @@
 		};
 		C3A9730629A0A7DB002FDDCE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A7E6297187F205D13C65313C /* Pods-QuickAction.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -310,6 +380,7 @@
 		};
 		C3A9730729A0A7DB002FDDCE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D0F7A25153E98ABDA1A6864 /* Pods-QuickAction.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
