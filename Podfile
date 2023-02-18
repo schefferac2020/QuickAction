@@ -9,5 +9,6 @@ target 'QuickAction' do
 
 pod 'Firebase/Core'
 pod 'Firebase/Auth'
+pod 'Firebase/Messaging'
 
 end

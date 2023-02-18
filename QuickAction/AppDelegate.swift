@@ -4,8 +4,11 @@
 //
 //  Created by Drew Scheffer on 2/18/23.
 //
-
+import Firebase
+import FirebaseMessaging
+import UserNotifications
 import UIKit
+
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {

@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1324A58D2139548068766DF8 /* Pods_QuickAction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B869A61A711387937179F04 /* Pods_QuickAction.framework */; };
+		6679F86829A0C7940000EC45 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6679F86729A0C7930000EC45 /* HomeViewController.swift */; };
+		6679F86A29A120260000EC45 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6679F86929A120250000EC45 /* LoginViewController.swift */; };
+		6679F86C29A127980000EC45 /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6679F86B29A127970000EC45 /* StatusViewController.swift */; };
+		6679F86E29A128490000EC45 /* IncidentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6679F86D29A128490000EC45 /* IncidentViewController.swift */; };
+		6679F87029A129C10000EC45 /* IncidentReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6679F86F29A129C10000EC45 /* IncidentReportViewController.swift */; };
 		C3A972F529A0A7D9002FDDCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A972F429A0A7D9002FDDCE /* AppDelegate.swift */; };
 		C3A972F729A0A7D9002FDDCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A972F629A0A7D9002FDDCE /* SceneDelegate.swift */; };
 		C3A972F929A0A7D9002FDDCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A972F829A0A7D9002FDDCE /* ViewController.swift */; };
@@ -19,6 +24,11 @@
 /* Begin PBXFileReference section */
 		1D0F7A25153E98ABDA1A6864 /* Pods-QuickAction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickAction.release.xcconfig"; path = "Target Support Files/Pods-QuickAction/Pods-QuickAction.release.xcconfig"; sourceTree = "<group>"; };
 		5B869A61A711387937179F04 /* Pods_QuickAction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickAction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6679F86729A0C7930000EC45 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6679F86929A120250000EC45 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		6679F86B29A127970000EC45 /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
+		6679F86D29A128490000EC45 /* IncidentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentViewController.swift; sourceTree = "<group>"; };
+		6679F86F29A129C10000EC45 /* IncidentReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncidentReportViewController.swift; sourceTree = "<group>"; };
 		A7E6297187F205D13C65313C /* Pods-QuickAction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickAction.debug.xcconfig"; path = "Target Support Files/Pods-QuickAction/Pods-QuickAction.debug.xcconfig"; sourceTree = "<group>"; };
 		C3A972F129A0A7D9002FDDCE /* QuickAction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickAction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A972F429A0A7D9002FDDCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +66,6 @@
 				A7E6297187F205D13C65313C /* Pods-QuickAction.debug.xcconfig */,
 				1D0F7A25153E98ABDA1A6864 /* Pods-QuickAction.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -88,6 +97,11 @@
 				C3A972FD29A0A7DB002FDDCE /* Assets.xcassets */,
 				C3A972FF29A0A7DB002FDDCE /* LaunchScreen.storyboard */,
 				C3A9730229A0A7DB002FDDCE /* Info.plist */,
+				6679F86729A0C7930000EC45 /* HomeViewController.swift */,
+				6679F86929A120250000EC45 /* LoginViewController.swift */,
+				6679F86B29A127970000EC45 /* StatusViewController.swift */,
+				6679F86D29A128490000EC45 /* IncidentViewController.swift */,
+				6679F86F29A129C10000EC45 /* IncidentReportViewController.swift */,
 			);
 			path = QuickAction;
 			sourceTree = "<group>";
@@ -208,8 +222,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3A972F929A0A7D9002FDDCE /* ViewController.swift in Sources */,
+				6679F86E29A128490000EC45 /* IncidentViewController.swift in Sources */,
 				C3A972F529A0A7D9002FDDCE /* AppDelegate.swift in Sources */,
 				C3A972F729A0A7D9002FDDCE /* SceneDelegate.swift in Sources */,
+				6679F86A29A120260000EC45 /* LoginViewController.swift in Sources */,
+				6679F86C29A127980000EC45 /* StatusViewController.swift in Sources */,
+				6679F87029A129C10000EC45 /* IncidentReportViewController.swift in Sources */,
+				6679F86829A0C7940000EC45 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +376,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YQY5BZLH6Y;
+				DEVELOPMENT_TEAM = CLCLXKQZ2N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuickAction/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -386,7 +405,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = YQY5BZLH6Y;
+				DEVELOPMENT_TEAM = CLCLXKQZ2N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = QuickAction/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
