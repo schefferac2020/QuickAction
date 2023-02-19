@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import CoreLocation
+import AVFoundation
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
@@ -108,6 +109,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        //Tell the user to fucking give us their camera
+        AVCaptureDevice.requestAccess(for: .video) { granted in
+                    if granted {
+                        print("Camera access granted")
+                        // add code to start capturing video or taking photos
+                    } else {
+                        print("Camera access denied")
+                        // add code to handle access denied
+                    }
+                }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -159,7 +171,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
             else {
                 // Go to home screen
-                self.performSegue(withIdentifier: "goToHomePage", sender: self)
+                self.performSegue(withIdentifier: "toHomePageSegue", sender: self)
             }
         }
     }

@@ -10,7 +10,11 @@ import FirebaseFirestore
 
 import CoreLocation
 
-class StatusReportViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
+import Foundation
+import FirebaseAuth
+
+
+class StatusReportViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var LocationTextField: UITextField!
     
@@ -22,8 +26,9 @@ class StatusReportViewController: UIViewController, CLLocationManagerDelegate, U
     
     @IBOutlet weak var Barricaded: UISegmentedControl!
     
-    let locationManager = CLLocationManager()
-    
+//    let locationManager = CLLocationManager()
+    let userDefaults = UserDefaults.standard
+
     
     @IBAction func SubmitButton(_ sender: Any) {
         let LocationText: String = LocationTextField.text ?? "NotReported"
@@ -31,6 +36,8 @@ class StatusReportViewController: UIViewController, CLLocationManagerDelegate, U
         let FloorText: String = FloorTextField.text ?? "NotReported"
         let NumberOfPeopleText: Int = Int(NumberOfPeopleTextField.text ?? "-1") ?? -1
         
+        let NameOfPerson: String = "TestPerson"
+        let PhoneNumber: String = "9991119999"
         var isBarricaded: Bool = false
         
         switch Barricaded.selectedSegmentIndex {
@@ -47,14 +54,25 @@ class StatusReportViewController: UIViewController, CLLocationManagerDelegate, U
         
         
         
-        onSubmit(location: LocationText, roomNumber: RoomNumberText, floor: FloorText, numberOfPeople: NumberOfPeopleText, isBarricaded: isBarricaded)
+        onSubmit(location: LocationText, roomNumber: RoomNumberText, floor: FloorText, numberOfPeople: NumberOfPeopleText, isBarricaded: isBarricaded, PhoneNumber: PhoneNumber, Name: NameOfPerson)
         
         
         print("hello")
         
+   
+
         
-        performSegue(withIdentifier: "StatusViewSegue", sender: self)
-        locationManager.requestLocation()
+        if Auth.auth().currentUser?.uid != nil {
+            //The user is logged in
+            print("The user is logged in")
+            performSegue(withIdentifier: "StatusViewSegue", sender: self)
+            
+        }else{
+            print("The user is not logged in...")
+            performSegue(withIdentifier: "NotLoggedInSegue", sender: self)
+        }
+        
+        
         
         
     }
@@ -70,14 +88,7 @@ class StatusReportViewController: UIViewController, CLLocationManagerDelegate, U
         
         NumberOfPeopleTextField.keyboardType = .decimalPad
         
-        self.locationManager.requestAlwaysAuthorization()
-        locationManager.requestWhenInUseAuthorization()
-        
-        if CLLocationManager.locationServicesEnabled() {
-            locationManager.delegate = self
-            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-            locationManager.startUpdatingLocation()
-        }
+
         
         
         
@@ -101,16 +112,20 @@ class StatusReportViewController: UIViewController, CLLocationManagerDelegate, U
         view.endEditing(true)
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-            guard let location = locations.last else { return }
-            print("Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude)")
-    }
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-            print("Error requesting location: \(error.localizedDescription)")
-    }
+//    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+//            guard let location = locations.last else { return }
+//            print("Latitude: \(location.coordinate.latitude), Longitude: \(location.coordinate.longitude)")
+//    }
+//    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+//            print("Error requesting location: \(error.localizedDescription)")
+//    }
     
-    func onSubmit(location: String, roomNumber: String, floor: String, numberOfPeople: Int, isBarricaded: Bool) {
-        let docRef = collection.document(UUID().uuidString)
+    func onSubmit(location: String, roomNumber: String, floor: String, numberOfPeople: Int, isBarricaded: Bool, PhoneNumber: String, Name: String) {
+        
+        let uid = userDefaults.string(forKey: "UID") ?? UUID().uuidString
+        let docRef = collection.document(uid)
+            userDefaults.set(uid, forKey: "UID")
+
         
         docRef.setData(["numberOfPeople": numberOfPeople,
                         "floor" : floor,
@@ -118,7 +133,37 @@ class StatusReportViewController: UIViewController, CLLocationManagerDelegate, U
                         "location" : location,
                         "isBarricaded": isBarricaded,
                         "safe": false,
-                        "time": Date.now])
+                        "time": Date.now,
+                        "UID": uid,
+                        "phoneNumber": PhoneNumber,
+                        "name": Name])
+        
+        if let user = Auth.auth().currentUser {
+            let email = user.email ?? "sample"
+            print("User email:")
+            print(email)
+            
+            let collection2 = Firestore.firestore().collection("Users")
+            let docRef2 = collection2.document(email)
+//            if let name = data["name"] as? String {
+//                // Use the name here
+//            }
+            docRef2.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    // Get the field you want
+                    let uName = document.get("name")
+                    let pNumber = document.get("phoneNumber")
+                    print("Field Value: \(uName)")
+                    docRef.setData(["name":uName, "phoneNumber": pNumber], merge: true)
+                } else {
+                    print("Document does not exist")
+                }
+            }
+
+            
+        } else {
+            print("User not logged in")
+        }
 
         
 

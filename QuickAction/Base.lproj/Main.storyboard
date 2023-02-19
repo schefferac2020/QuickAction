@@ -154,6 +154,7 @@
                         <outlet property="NumberOfPeopleTextField" destination="ZrY-Ea-rsu" id="6D8-hp-xVe"/>
                         <outlet property="RoomNumberTextField" destination="cEF-cE-v5U" id="zwG-xw-Cmy"/>
                         <segue destination="AnP-3E-rHo" kind="show" identifier="StatusViewSegue" id="raQ-ct-Wvz"/>
+                        <segue destination="t14-4U-Ywy" kind="show" identifier="NotLoggedInSegue" id="4KB-M3-qXd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akM-it-0Wz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -324,6 +325,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A 911 Operator has recived your information. Stay where you are untill you recieve a call back with further instructions" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFl-3F-g8T">
+                                <rect key="frame" x="30" y="153" width="333" height="229.33333333333337"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iyc-MN-gIN">
                                 <rect key="frame" x="133" y="482.33333333333331" width="127" height="49.999999999999943"/>
                                 <constraints>
@@ -355,12 +362,21 @@
                                     <action selector="SubmitButton:" destination="W3W-xd-4mh" eventType="touchUpInside" id="av5-t0-lrK"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A 911 Operator has recived your information. Stay where you are untill you recieve a call back with further instructions" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFl-3F-g8T">
-                                <rect key="frame" x="30" y="153" width="333" height="229.33333333333337"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6nE-gH-nhT">
+                                <rect key="frame" x="121.66666666666669" y="612.33333333333337" width="150" height="100"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="iJl-Lf-od2"/>
+                                    <constraint firstAttribute="height" constant="100" id="ydm-7W-FkT"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Panic">
+                                    <color key="baseForegroundColor" systemColor="labelColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="panicButtonPressed:" destination="AnP-3E-rHo" eventType="touchUpInside" id="Aeh-rc-hcj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TQC-0g-Xtv"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
@@ -368,7 +384,9 @@
                             <constraint firstItem="DFl-3F-g8T" firstAttribute="centerX" secondItem="hKo-Pd-DCU" secondAttribute="centerX" id="8lP-z8-d2a"/>
                             <constraint firstItem="DFl-3F-g8T" firstAttribute="top" secondItem="TQC-0g-Xtv" secondAttribute="top" constant="50" id="AfA-1h-9Dd"/>
                             <constraint firstAttribute="trailing" secondItem="DFl-3F-g8T" secondAttribute="trailing" constant="30" id="G8J-GX-TDd"/>
+                            <constraint firstItem="6nE-gH-nhT" firstAttribute="top" secondItem="Iyc-MN-gIN" secondAttribute="bottom" constant="80" id="GNk-SP-r6t"/>
                             <constraint firstItem="Iyc-MN-gIN" firstAttribute="top" secondItem="DFl-3F-g8T" secondAttribute="bottom" constant="100" id="OoP-8b-2aS"/>
+                            <constraint firstItem="6nE-gH-nhT" firstAttribute="centerX" secondItem="hKo-Pd-DCU" secondAttribute="centerX" id="c3s-eK-OXG"/>
                             <constraint firstItem="Iyc-MN-gIN" firstAttribute="centerX" secondItem="hKo-Pd-DCU" secondAttribute="centerX" id="exw-U6-7xO"/>
                             <constraint firstItem="Iyc-MN-gIN" firstAttribute="centerX" secondItem="hKo-Pd-DCU" secondAttribute="centerX" id="g6U-8T-iQi"/>
                             <constraint firstItem="DFl-3F-g8T" firstAttribute="leading" secondItem="hKo-Pd-DCU" secondAttribute="leading" constant="30" id="gDg-2Z-20U"/>
@@ -377,11 +395,12 @@
                     <navigationItem key="navigationItem" id="jkb-TK-3Kr"/>
                     <connections>
                         <outlet property="messageLabel" destination="DFl-3F-g8T" id="Iqd-O7-KPK"/>
+                        <outlet property="panicButton" destination="6nE-gH-nhT" id="4hA-kO-cKh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1k9-8j-9ti" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2075.5725190839694" y="2788.7323943661972"/>
+            <point key="canvasLocation" x="2600.7633587786258" y="2887.323943661972"/>
         </scene>
         <!--Item-->
         <scene sceneID="vqS-Qg-27h">
@@ -473,6 +492,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zPJ-AH-m9u" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1236" y="2096"/>
+        </scene>
+        <!--Not Logged In View Controller-->
+        <scene sceneID="OxG-KV-Yx2">
+            <objects>
+                <viewController id="t14-4U-Ywy" customClass="NotLoggedInViewController" customModule="QuickAction" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="84p-uQ-g9t">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="p1k-3Y-hVw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="abm-tZ-3dl"/>
+                    <connections>
+                        <segue destination="AnP-3E-rHo" kind="show" identifier="StatusSegue" id="dNa-8W-4OZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t0F-m8-4IZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1656" y="2887"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="v8s-Tb-m7W">
@@ -810,7 +848,8 @@ Follow law enforcement instructions: When law enforcement arrives, follow their 
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="zWl-8F-f9U"/>
+        <segue reference="raQ-ct-Wvz"/>
+        <segue reference="mWw-rL-emc"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="call" width="512" height="512"/>
@@ -822,6 +861,9 @@ Follow law enforcement instructions: When law enforcement arrives, follow their 
         <image name="run" width="612" height="527"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

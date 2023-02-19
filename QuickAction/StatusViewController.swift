@@ -7,11 +7,16 @@
 
 import UIKit
 import FirebaseFirestore
+import Foundation
 
 class StatusViewController: UIViewController {
 
     
     let collection = Firestore.firestore().collection("Report")
+    let userDefaults = UserDefaults.standard
+    
+    var PanicMode = false
+    @IBOutlet weak var panicButton: UIButton!
     
     @IBOutlet weak var messageLabel: UILabel!
     
@@ -19,8 +24,9 @@ class StatusViewController: UIViewController {
         super.viewDidLoad()
         
         
-        let docRef = collection.document("TestingGreen")
-        
+        let setString: String = userDefaults.string(forKey: "UID") ?? "TestingGreen"
+                
+        let docRef = collection.document(setString)
         docRef.addSnapshotListener { documentSnapshot, error in
             guard let document = documentSnapshot else {
                 print("Error fetching document: \(error!)")
@@ -51,4 +57,24 @@ class StatusViewController: UIViewController {
            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
+    
+    @IBAction func panicButtonPressed(_ sender: Any) {
+        let setString: String = userDefaults.string(forKey: "UID") ?? "TestingGreen"
+        if !PanicMode {
+            let docRef = collection.document(setString)
+            docRef.setData(["panic":true],merge: true)
+            
+            panicButton.backgroundColor = .red
+            
+        }
+        else {
+            let docRef = collection.document(setString)
+            docRef.setData(["panic":false],merge: true)
+            
+            panicButton.backgroundColor = .white
+        }
+        PanicMode = !PanicMode
+        
+    }
+    
 }

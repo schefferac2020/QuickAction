@@ -61,6 +61,22 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         field.layer.masksToBounds = true
         return field
     }()
+    
+    // Password field
+    private let phoneField: UITextField = {
+        let field = UITextField()
+        field.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 50))
+        field.leftViewMode = .always
+        field.placeholder = "Phone #"
+        field.keyboardType = .phonePad
+        field.autocapitalizationType = .none
+        field.autocorrectionType = .no
+        field.isSecureTextEntry = true
+        field.backgroundColor = .secondarySystemBackground
+        field.layer.cornerRadius = 8
+        field.layer.masksToBounds = true
+        return field
+    }()
 
     // Sign In button
     private let signUpButton: UIButton = {
@@ -85,11 +101,13 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(nameField)
         view.addSubview(emailField)
         view.addSubview(passwordField)
+        view.addSubview(phoneField)
         view.addSubview(signUpButton)
 
         signUpButton.addTarget(self, action: #selector(didTapSignUp), for: .touchUpInside)
         
         emailField.delegate = self
+        phoneField.delegate = self
         passwordField.delegate = self
         nameField.delegate = self
         
@@ -128,8 +146,10 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         logoImageView.frame = CGRect(x: self.view.frame.size.width/2 - 150, y: view.safeAreaInsets.top + 20, width: 300, height: 300)
         
         nameField.frame = CGRect(x: 20, y: logoImageView.frame.maxY + 10, width: self.view.frame.size.width-40, height: 50)
+        nameField.frame = CGRect(x: 20, y: logoImageView.frame.maxY + 10, width: self.view.frame.size.width-40, height: 50)
         emailField.frame = CGRect(x: 20, y: nameField.frame.maxY + 10, width: self.view.frame.size.width-40, height: 50)
-        passwordField.frame = CGRect(x: 20, y: emailField.frame.maxY+10, width: self.view.frame.size.width-40, height: 50)
+        phoneField.frame = CGRect(x: 20, y: emailField.frame.maxY + 10, width: self.view.frame.size.width-40, height: 50)
+        passwordField.frame = CGRect(x: 20, y: phoneField.frame.maxY+10, width: self.view.frame.size.width-40, height: 50)
         signUpButton.frame = CGRect(x: 20, y: passwordField.frame.maxY+10, width: self.view.frame.size.width-40, height: 50)
         
         
@@ -140,6 +160,7 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
         guard let name = nameField.text else { return }
         guard let email = emailField.text else { return }
         guard let password = passwordField.text else { return }
+        guard let phone = phoneField.text else { return }
         
         Auth.auth().createUser(withEmail: email, password: password) { firebaseResult, error in
             if let e = error {
@@ -151,7 +172,11 @@ class RegisterViewController: UIViewController, UITextFieldDelegate {
             }
             else {
                 // Go to home screen
-                self.performSegue(withIdentifier: "goToHomePage", sender: self)
+                let collection = Firestore.firestore().collection("Users")
+                let docRef = collection.document(email);
+                docRef.setData(["name": name, "email": email, "phoneNumber": phone])
+                
+                self.performSegue(withIdentifier: "toHomePageSegue", sender: self)
             }
         }
         
