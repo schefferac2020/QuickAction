@@ -12,6 +12,9 @@
 		126FA8FA29A13D7C0045DD34 /* AmanStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 126FA8F929A13D7C0045DD34 /* AmanStoryboard.storyboard */; };
 		12C41C9029A0DA1D002493B5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C41C8F29A0DA1D002493B5 /* RegisterViewController.swift */; };
 		1324A58D2139548068766DF8 /* Pods_QuickAction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B869A61A711387937179F04 /* Pods_QuickAction.framework */; };
+		661BAF0529A170C30045532D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661BAF0429A170C30045532D /* HomeViewController.swift */; };
+		66C769C629A17C520040AF9C /* StatusReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C769C529A17C520040AF9C /* StatusReportViewController.swift */; };
+		66C769C929A1C9600040AF9C /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C769C829A1C9600040AF9C /* StatusViewController.swift */; };
 		C3A972F529A0A7D9002FDDCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A972F429A0A7D9002FDDCE /* AppDelegate.swift */; };
 		C3A972F729A0A7D9002FDDCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A972F629A0A7D9002FDDCE /* SceneDelegate.swift */; };
 		C3A972F929A0A7D9002FDDCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A972F829A0A7D9002FDDCE /* ViewController.swift */; };
@@ -27,6 +30,10 @@
 		12C41C8F29A0DA1D002493B5 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		1D0F7A25153E98ABDA1A6864 /* Pods-QuickAction.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickAction.release.xcconfig"; path = "Target Support Files/Pods-QuickAction/Pods-QuickAction.release.xcconfig"; sourceTree = "<group>"; };
 		5B869A61A711387937179F04 /* Pods_QuickAction.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_QuickAction.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		661BAF0429A170C30045532D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		66C769C529A17C520040AF9C /* StatusReportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusReportViewController.swift; sourceTree = "<group>"; };
+		66C769C729A1A7130040AF9C /* QuickAction.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuickAction.entitlements; sourceTree = "<group>"; };
+		66C769C829A1C9600040AF9C /* StatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewController.swift; sourceTree = "<group>"; };
 		A7E6297187F205D13C65313C /* Pods-QuickAction.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuickAction.debug.xcconfig"; path = "Target Support Files/Pods-QuickAction/Pods-QuickAction.debug.xcconfig"; sourceTree = "<group>"; };
 		C3A972F129A0A7D9002FDDCE /* QuickAction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickAction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A972F429A0A7D9002FDDCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +95,7 @@
 		C3A972F329A0A7D9002FDDCE /* QuickAction */ = {
 			isa = PBXGroup;
 			children = (
+				66C769C729A1A7130040AF9C /* QuickAction.entitlements */,
 				C3A972F429A0A7D9002FDDCE /* AppDelegate.swift */,
 				C3A972F629A0A7D9002FDDCE /* SceneDelegate.swift */,
 				C3A972F829A0A7D9002FDDCE /* ViewController.swift */,
@@ -99,6 +107,9 @@
 				1231F83029A0BC4500D07FF2 /* GoogleService-Info.plist */,
 				1231F83229A0CCEF00D07FF2 /* LoginViewController.swift */,
 				126FA8F929A13D7C0045DD34 /* AmanStoryboard.storyboard */,
+				661BAF0429A170C30045532D /* HomeViewController.swift */,
+				66C769C529A17C520040AF9C /* StatusReportViewController.swift */,
+				66C769C829A1C9600040AF9C /* StatusViewController.swift */,
 			);
 			path = QuickAction;
 			sourceTree = "<group>";
@@ -220,11 +231,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66C769C929A1C9600040AF9C /* StatusViewController.swift in Sources */,
+				66C769C629A17C520040AF9C /* StatusReportViewController.swift in Sources */,
 				1231F83329A0CCF000D07FF2 /* LoginViewController.swift in Sources */,
 				12C41C9029A0DA1D002493B5 /* RegisterViewController.swift in Sources */,
 				C3A972F929A0A7D9002FDDCE /* ViewController.swift in Sources */,
 				C3A972F529A0A7D9002FDDCE /* AppDelegate.swift in Sources */,
 				C3A972F729A0A7D9002FDDCE /* SceneDelegate.swift in Sources */,
+				661BAF0529A170C30045532D /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -370,6 +384,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QuickAction/QuickAction.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YQY5BZLH6Y;
@@ -399,6 +414,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = QuickAction/QuickAction.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = YQY5BZLH6Y;

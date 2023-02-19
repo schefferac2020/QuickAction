@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 
 class LoginViewController: UIViewController {
     
@@ -14,7 +15,10 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
-
+   
+    
+    
+    
     @IBAction func loginClicked(_ sender: UIButton) {
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
@@ -39,7 +43,8 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         // Do any additional setup after  loading the view.
     }
     
