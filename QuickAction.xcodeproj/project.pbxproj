@@ -28,6 +28,7 @@
 		C3A972FC29A0A7D9002FDDCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A972FA29A0A7D9002FDDCE /* Main.storyboard */; };
 		C3A972FE29A0A7DB002FDDCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A972FD29A0A7DB002FDDCE /* Assets.xcassets */; };
 		C3A9730129A0A7DB002FDDCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A972FF29A0A7DB002FDDCE /* LaunchScreen.storyboard */; };
+		C3DF828829A1891200AAEEA4 /* AuditoryGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DF828729A1891200AAEEA4 /* AuditoryGuide.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		C3A972FD29A0A7DB002FDDCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3A9730029A0A7DB002FDDCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3DB24B129A0BE8400F4EDA4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3DF828729A1891200AAEEA4 /* AuditoryGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditoryGuide.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +156,7 @@
 				C3A972F629A0A7D9002FDDCE /* SceneDelegate.swift */,
 				C3A972F829A0A7D9002FDDCE /* ViewController.swift */,
 				C3A972FA29A0A7D9002FDDCE /* Main.storyboard */,
+				C3DF828729A1891200AAEEA4 /* AuditoryGuide.swift */,
 				C3DB24B129A0BE8400F4EDA4 /* Info.plist */,
 				C376D79B29A0B82000B4E659 /* Focus Squares */,
 				C3A972FD29A0A7DB002FDDCE /* Assets.xcassets */,
@@ -283,6 +286,7 @@
 				C376D79729A0B81900B4E659 /* SceneExtensions.swift in Sources */,
 				C376D7A329A0B83300B4E659 /* ObjectFactory.swift in Sources */,
 				C376D79329A0B81900B4E659 /* Utilities.swift in Sources */,
+				C3DF828829A1891200AAEEA4 /* AuditoryGuide.swift in Sources */,
 				C376D79629A0B81900B4E659 /* LineExtention.swift in Sources */,
 				C376D79829A0B81900B4E659 /* UIExtentions.swift in Sources */,
 				C376D79F29A0B82000B4E659 /* FocusSquare.swift in Sources */,
@@ -372,7 +376,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -426,7 +430,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

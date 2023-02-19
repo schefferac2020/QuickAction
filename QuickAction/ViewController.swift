@@ -10,13 +10,14 @@ import SceneKit
 import ARKit
 import Foundation
 import Vision
+import AVFoundation
 
 enum DrawingState {
     case NOT_SET, PLACING_NODES
 }
 
 class ViewController: UIViewController, ARSCNViewDelegate {
-
+    
     
     let orange_clickable = UIColor(red: 251/255, green: 147/255, blue: 0/255, alpha: 1.0)
     let orange_disabled = UIColor(red: 251/255, green: 147/255, blue: 0/255, alpha: 0.5)
@@ -38,8 +39,10 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     private let sceneView: ARSCNView =  ARSCNView(frame: UIScreen.main.bounds)
     private let indicator = UIImageView()
     
+    var auditoryGuide: AuditoryGuide?
+        
     let path_information: Dictionary<String, [SCNVector3]> = [
-        "bike": [SCNVector3(x: 0.1, y: 0.1, z: 0.1), SCNVector3(x: 0.2, y: 0.2, z: 0.2), SCNVector3(x: 0.25, y: 0.25, z: 0.25)]
+        "bike": [SCNVector3(x: 0.0, y: 0.3, z: 0.0), SCNVector3(x: 4.26, y: 0.3, z: 0), SCNVector3(x: 4.26, y: -1.2, z: 0), SCNVector3(x: 7.2, y: -1.2, z: 0), SCNVector3(x: 7.2, y: 2.4, z: 0), SCNVector3(x: 7.7, y: 2.4, z: 0)]
     ]
     
     let following_the_leader = true;
@@ -56,9 +59,14 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     var moreToggled: Bool = false
     
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
         layout_view()
         setUpAndRunConfiguration()
+        
+        
+        
     }
     
     private func SetupToast(){
@@ -182,8 +190,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             toastLbl.isHidden = true
         }
         
-        
-        
         // Set the origin
         sceneView.session.setWorldOrigin(relativeTransform: anchor.transform)
         
@@ -199,7 +205,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         guard let new_path = path_information[anchor_name] else { return  }
         
         linesGroup = LineGroup(positions: new_path, sceneView: sceneView)
-        
+        auditoryGuide = AuditoryGuide(line_group: linesGroup!, threshold: 0.4)
     }
     
     //Runs over and over again (60fps)
@@ -207,6 +213,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         self.updateLine()
         self.updateFocusSquare()
         
+        //Get the camera position
+        let user_vec = getUserVector()
+        let user_dir = user_vec.0
+        let user_pos = user_vec.1
+        
+        auditoryGuide?.UpdateCameraLocation(camera_pos: user_pos)
     }
     
     public func lineIntersection(planePoint: SCNVector3, planeNormal: SCNVector3, linePoint: SCNVector3, lineDirection: SCNVector3) -> SCNVector3? {
@@ -291,6 +303,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     
     //MARK: - IBActions
     @IBAction func moreButtonPressed(_ sender: Any) {
+        
+        
         
         let dur = 0.4
         let op = UIView.AnimationOptions.transitionCrossDissolve

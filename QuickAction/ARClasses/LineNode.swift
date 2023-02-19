@@ -14,9 +14,12 @@ class LineNode: NSObject, NSCopying {
     
     let good_orange = UIColor(red: 251/255, green: 147/255, blue: 0/255, alpha: 1.0)
     
+    var node_scale = 1/400.0
+    
     let startNode: SCNNode
     let endNode: SCNNode
     var lineNode: SCNNode?
+    var arrowNode: SCNNode?
     var sceneView: ARSCNView?
     private var recentFocusSquarePositions = [SCNVector3]()
     
@@ -32,12 +35,12 @@ class LineNode: NSObject, NSCopying {
         self.sceneView = scnView
         
         startNode = SCNNode(geometry: buildSphere(color: good_orange))
-        startNode.scale = SCNVector3(1/400.0, 1/400.0, 1/400.0)
+        startNode.scale = SCNVector3(node_scale, node_scale, node_scale)
         startNode.position = startPos
         sceneView?.scene.rootNode.addChildNode(startNode)
         
         endNode = SCNNode(geometry: buildSphere(color: good_orange))
-        endNode.scale = SCNVector3(1/400.0, 1/400.0, 1/400.0)
+        endNode.scale = SCNVector3(node_scale, node_scale, node_scale)
         
         lineNode = nil
         
@@ -46,7 +49,6 @@ class LineNode: NSObject, NSCopying {
     
     //initializew with a start and end pos
     init(startPos: SCNVector3, endPos: SCNVector3, scnView: ARSCNView) {
-        
         func buildSphere(color: UIColor) -> SCNSphere {
             let dot = SCNSphere(radius: 1)
             dot.firstMaterial?.diffuse.contents = color
@@ -58,12 +60,12 @@ class LineNode: NSObject, NSCopying {
         self.sceneView = scnView
         
         startNode = SCNNode(geometry: buildSphere(color: good_orange))
-        startNode.scale = SCNVector3(1/400.0, 1/400.0, 1/400.0)
+        startNode.scale = SCNVector3(node_scale, node_scale, node_scale)
         startNode.position = startPos
         sceneView?.scene.rootNode.addChildNode(startNode)
         
         endNode = SCNNode(geometry: buildSphere(color: good_orange))
-        endNode.scale = SCNVector3(1/400.0, 1/400.0, 1/400.0)
+        endNode.scale = SCNVector3(node_scale, node_scale, node_scale)
         endNode.position = endPos
         sceneView?.scene.rootNode.addChildNode(endNode)
         
@@ -71,6 +73,16 @@ class LineNode: NSObject, NSCopying {
         
         lineNode = self.lineBetweenNodes(node1: startNode, node2: endNode)
         sceneView?.scene.rootNode.addChildNode(lineNode!)
+        
+        
+        arrowNode = CreateArrow(with: .orange)
+        arrowNode?.position.x = (startPos.x + endPos.x) / 2
+        arrowNode?.position.y = (startPos.y + endPos.y) / 2
+        arrowNode?.position.z = (startPos.z + endPos.z) / 2
+        arrowNode?.eulerAngles = lineNode!.eulerAngles
+        sceneView?.scene.rootNode.addChildNode(arrowNode!)
+        
+        
         
     }
     
@@ -131,12 +143,30 @@ class LineNode: NSObject, NSCopying {
         return lineNode
     }
     
+    func CreateArrow(with color: UIColor) -> SCNNode{
+        let path = UIBezierPath()
+        path.move(to: CGPoint(x: 0.0, y: 0.0))
+        path.addLine(to: CGPoint(x: -0.05, y: -0.05))
+        path.addLine(to: CGPoint(x: 0.05, y: -0.05))
+        //path.addLine(to: CGPoint(x: 0, y: 0.1))
+        path.close()
+        
+        let shape = SCNShape(path: path, extrusionDepth: 0.01)
+        shape.firstMaterial?.diffuse.contents = color
+        shape.chamferRadius = 0.1
+        
+        let node = SCNNode(geometry: shape)
+        
+        return node
+    }
+    
     //MARK: - Private
     
     func removeFromParent() {
         startNode.removeFromParentNode()
         endNode.removeFromParentNode()
         lineNode?.removeFromParentNode()
+        arrowNode?.removeFromParentNode()
     }
     
     private func updateTransform(for position: SCNVector3, camera: ARCamera?) -> SCNVector3 {
