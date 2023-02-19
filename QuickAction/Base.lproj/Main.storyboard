@@ -6,6 +6,7 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -171,7 +172,7 @@
                     <connections>
                         <segue destination="IAB-XK-WXM" kind="relationship" relationship="viewControllers" id="z0u-Jc-FVP"/>
                         <segue destination="LB8-cr-53w" kind="relationship" relationship="viewControllers" id="EJb-bV-PXW"/>
-                        <segue destination="k66-ot-Ev0" kind="relationship" relationship="viewControllers" id="ftg-C0-fwU"/>
+                        <segue destination="2TQ-yo-8YW" kind="relationship" relationship="viewControllers" id="6vn-Wk-w2k"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yy8-HC-ULA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -197,6 +198,106 @@
             </objects>
             <point key="canvasLocation" x="2076" y="1375"/>
         </scene>
+        <!--Item-->
+        <scene sceneID="JhW-eV-erE">
+            <objects>
+                <navigationController id="2TQ-yo-8YW" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="ellipsis" catalog="system" id="D5d-fd-x42"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="pyH-Yt-hNV">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="uTk-9m-OtY" kind="relationship" relationship="rootViewController" id="tfB-LZ-e4F"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4hH-FJ-z9q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2923" y="1375"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="tPs-7O-g1I">
+            <objects>
+                <collectionViewController id="uTk-9m-OtY" customClass="ReferencesViewController" customModule="QuickAction" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="o7m-HY-BwD">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="20" id="ZP6-RC-phU">
+                            <size key="itemSize" width="150" height="100"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="35" minY="40" maxX="35" maxY="1"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="pRm-74-BxN" customClass="CollectionViewCell" customModule="QuickAction" customModuleProvider="target">
+                                <rect key="frame" x="35" y="40" width="150" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="icV-UC-pgr">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hm7-Ah-jER">
+                                            <rect key="frame" x="18" y="8" width="114" height="84"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.53950233349999999" green="0.80111227920000005" blue="0.97509463969999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <constraints>
+                                        <constraint firstItem="hm7-Ah-jER" firstAttribute="leading" secondItem="icV-UC-pgr" secondAttribute="leading" constant="18" id="CSU-ve-giH"/>
+                                        <constraint firstAttribute="trailing" secondItem="hm7-Ah-jER" secondAttribute="trailing" constant="18" id="DB1-u1-mNh"/>
+                                        <constraint firstItem="hm7-Ah-jER" firstAttribute="top" secondItem="icV-UC-pgr" secondAttribute="top" constant="8" id="jjW-VD-Qjf"/>
+                                        <constraint firstAttribute="bottom" secondItem="hm7-Ah-jER" secondAttribute="bottom" constant="8" id="khL-Cg-Fcs"/>
+                                    </constraints>
+                                </collectionViewCellContentView>
+                                <size key="customSize" width="150" height="100"/>
+                                <connections>
+                                    <outlet property="nameLabel" destination="hm7-Ah-jER" id="vWf-hT-RuN"/>
+                                </connections>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bIr-6i-KL3">
+                                <rect key="frame" x="208" y="40" width="150" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="IHI-RE-Rc1">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Crl-5z-dtI">
+                                <rect key="frame" x="35" y="170" width="150" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="EFH-5A-HYg">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yl0-oB-SYG">
+                                <rect key="frame" x="208" y="170" width="150" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="HZk-xp-oJV">
+                                    <rect key="frame" x="0.0" y="0.0" width="150" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </collectionViewCellContentView>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="uTk-9m-OtY" id="O0V-EH-bd8"/>
+                            <outlet property="delegate" destination="uTk-9m-OtY" id="BqR-71-Jbn"/>
+                        </connections>
+                    </collectionView>
+                    <tabBarItem key="tabBarItem" title="Item" image="ellipsis" catalog="system" id="tSO-pn-rUg"/>
+                    <navigationItem key="navigationItem" id="U2b-kt-zje"/>
+                    <connections>
+                        <segue destination="IfP-aQ-17b" kind="show" identifier="ActiveShooterSegue" id="Zyu-9E-Yc7"/>
+                        <segue destination="aU1-Zv-g5l" kind="show" identifier="FirstAidSegue" id="GH5-nq-pRk"/>
+                    </connections>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XUK-IP-Adi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2922.9007633587785" y="2095.7746478873241"/>
+        </scene>
         <!--AR Wayfinder-->
         <scene sceneID="g42-kp-eOZ">
             <objects>
@@ -213,23 +314,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dOo-8t-PoT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1237" y="1376"/>
-        </scene>
-        <!--Other-->
-        <scene sceneID="egG-Wn-ZCh">
-            <objects>
-                <viewController id="k66-ot-Ev0" customClass="IncidentViewController" customModule="QuickAction" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aBB-Ec-0eJ">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="oJR-rc-SIw"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Other" image="ellipsis" catalog="system" selectedImage="ellipsis" id="K2I-Bf-bc4"/>
-                    <navigationItem key="navigationItem" id="Q8E-Ey-2VS"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oQz-C0-Nd2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2955" y="1375"/>
         </scene>
         <!--Status View Controller-->
         <scene sceneID="o5Y-fS-0eX">
@@ -453,14 +537,242 @@
             </objects>
             <point key="canvasLocation" x="-150" y="1728"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="XX9-dc-Yrm">
+            <objects>
+                <viewController id="aU1-Zv-g5l" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="6Vh-TL-fqt">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b0I-WT-Qve">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BY6-RM-nRe">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1200"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FirstAid Instructions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UjT-ji-TbD">
+                                                <rect key="frame" x="36" y="19.999999999999996" width="321" height="40.666666666666657"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c86-FQ-TfR">
+                                                <rect key="frame" x="30" y="80.666666666666657" width="333" height="119.66666666666666"/>
+                                                <string key="text">First aid instructions will vary depending on the nature of the emergency, but here are some general guidelines that can apply to many common first aid situations:</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2BO-iH-dxc">
+                                                <rect key="frame" x="20" y="240.33333333333326" width="353" height="629"/>
+                                                <string key="text">Assess the situation: Before administering first aid, make sure the area is safe and free from any potential hazards. If the situation is unsafe, call for help and wait for emergency services to arrive.
+
+Check for responsiveness: If someone appears to be unconscious or unresponsive, check for signs of breathing and pulse. If the person is not breathing or has no pulse, begin CPR or other appropriate life-saving measures.
+
+Stop any bleeding: If someone is bleeding, apply direct pressure to the wound with a clean cloth or bandage to stop the bleeding. Elevate the affected limb if possible and seek medical attention as soon as possible.
+
+Immobilize injuries: If someone has a suspected broken bone or spinal injury, immobilize the affected limb or area by applying a splint or other supportive device.
+
+Provide emotional support: In addition to providing physical first aid, it's also important to offer emotional support to someone who has been injured or is experiencing a traumatic event. Stay calm, reassure the person, and provide them with any necessary resources or assistance.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="c86-FQ-TfR" secondAttribute="trailing" constant="30" id="FWb-QP-yD8"/>
+                                            <constraint firstItem="UjT-ji-TbD" firstAttribute="centerX" secondItem="BY6-RM-nRe" secondAttribute="centerX" id="J4Z-3H-LI8"/>
+                                            <constraint firstItem="UjT-ji-TbD" firstAttribute="top" secondItem="BY6-RM-nRe" secondAttribute="top" constant="20" id="Ltb-y8-q19"/>
+                                            <constraint firstItem="c86-FQ-TfR" firstAttribute="leading" secondItem="BY6-RM-nRe" secondAttribute="leading" constant="30" id="ObN-Y4-C8I"/>
+                                            <constraint firstAttribute="height" constant="1200" id="SK6-N9-D0A"/>
+                                            <constraint firstAttribute="trailing" secondItem="2BO-iH-dxc" secondAttribute="trailing" constant="20" id="VyO-rb-udj"/>
+                                            <constraint firstItem="2BO-iH-dxc" firstAttribute="leading" secondItem="BY6-RM-nRe" secondAttribute="leading" constant="20" id="a0E-ij-q06"/>
+                                            <constraint firstItem="2BO-iH-dxc" firstAttribute="top" secondItem="c86-FQ-TfR" secondAttribute="bottom" constant="40" id="biW-nb-Nef"/>
+                                            <constraint firstItem="c86-FQ-TfR" firstAttribute="top" secondItem="UjT-ji-TbD" secondAttribute="bottom" constant="20" id="bvM-GU-oNc"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="BY6-RM-nRe" firstAttribute="leading" secondItem="b0I-WT-Qve" secondAttribute="leading" id="GGO-eZ-BAn"/>
+                                    <constraint firstItem="BY6-RM-nRe" firstAttribute="top" secondItem="b0I-WT-Qve" secondAttribute="top" id="Ktw-FJ-M16"/>
+                                    <constraint firstItem="BY6-RM-nRe" firstAttribute="trailing" secondItem="b0I-WT-Qve" secondAttribute="trailing" id="Ph3-7U-U4h"/>
+                                    <constraint firstItem="BY6-RM-nRe" firstAttribute="bottom" secondItem="b0I-WT-Qve" secondAttribute="bottom" id="ZiS-2G-vmQ"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zMU-tr-KIr"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="b0I-WT-Qve" firstAttribute="leading" secondItem="zMU-tr-KIr" secondAttribute="leading" id="2A0-TH-uUz"/>
+                            <constraint firstItem="b0I-WT-Qve" firstAttribute="bottom" secondItem="zMU-tr-KIr" secondAttribute="bottom" id="5yS-JH-DGB"/>
+                            <constraint firstItem="b0I-WT-Qve" firstAttribute="trailing" secondItem="zMU-tr-KIr" secondAttribute="trailing" id="EnI-KD-Ety"/>
+                            <constraint firstItem="BY6-RM-nRe" firstAttribute="width" secondItem="6Vh-TL-fqt" secondAttribute="width" id="UMT-9f-DwM"/>
+                            <constraint firstItem="b0I-WT-Qve" firstAttribute="top" secondItem="zMU-tr-KIr" secondAttribute="top" id="USs-Ba-Jld"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="6v1-ZG-qk2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Qkr-aL-ktG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4543" y="2026"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="X0a-cA-8hc">
+            <objects>
+                <viewController id="IfP-aQ-17b" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ctC-rw-lZl">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IrB-US-6QU">
+                                <rect key="frame" x="0.0" y="103" width="393" height="666"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZJ-bD-ol0">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="1700"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Active Shooter Situation" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQi-fR-cNQ">
+                                                <rect key="frame" x="21.333333333333343" y="20" width="350.33333333333326" height="37"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="31"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0K-7Q-0Nq">
+                                                <rect key="frame" x="30" y="77.000000000000014" width="333" height="167.33333333333337"/>
+                                                <string key="text">An active shooter situation can be incredibly dangerous and terrifying, but there are steps that individuals can take to help protect themselves and others. Here are some general guidelines for what to do in the event of an active shooter threat:</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oi-fw-2yT">
+                                                <rect key="frame" x="20" y="434.33333333333337" width="353" height="142.33333333333337"/>
+                                                <string key="text">Run: If you can safely evacuate the area, do so immediately. Leave your belongings behind and run away from the shooter as quickly as possible. Try to stay low to the ground and avoid running in a straight line. Encourage others to come with you, but do not wait for anyone who is hesitant.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="run" translatesAutoresizingMaskIntoConstraints="NO" id="mHC-o2-Y5w">
+                                                <rect key="frame" x="121.66666666666669" y="274.33333333333331" width="150" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="BKI-2J-n5T"/>
+                                                    <constraint firstAttribute="width" constant="150" id="shw-KC-pQi"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XxG-bq-UaE">
+                                                <rect key="frame" x="20" y="766.66666666666663" width="353" height="122"/>
+                                                <string key="text">Hide: If you are unable to safely evacuate, find a secure hiding place and lock the door or barricade it with heavy objects. Turn off the lights, silence your phone, and remain quiet. If possible, cover the windows and stay low to the ground.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hide" translatesAutoresizingMaskIntoConstraints="NO" id="BNX-5h-6yt">
+                                                <rect key="frame" x="121.66666666666669" y="606.66666666666663" width="150" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="Wi1-Ql-a4N"/>
+                                                    <constraint firstAttribute="height" constant="150" id="cyC-G5-oGh"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ADb-gg-zTl">
+                                                <rect key="frame" x="20" y="1078.6666666666667" width="353" height="122"/>
+                                                <string key="text">Fight: If you are unable to run or hide, be prepared to defend yourself. Find objects that can be used as weapons and try to incapacitate the shooter if they enter your area. Be aggressive and use any means necessary to protect yourself and others.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fight" translatesAutoresizingMaskIntoConstraints="NO" id="XHR-AA-n23">
+                                                <rect key="frame" x="121.66666666666669" y="918.66666666666663" width="150" height="149.99999999999989"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="120-cd-gBj"/>
+                                                    <constraint firstAttribute="width" constant="150" id="j4U-9i-hfL"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WK7-By-68X">
+                                                <rect key="frame" x="20" y="1390.6666666666667" width="353" height="264"/>
+                                                <string key="text">Call for help: Call 911 or the emergency number in your country as soon as it is safe to do so. Provide as much information as possible about the situation, including your location and the number of shooters.
+
+Follow law enforcement instructions: When law enforcement arrives, follow their instructions carefully. Keep your hands visible and avoid making sudden movements. Do not approach or attempt to interact with law enforcement, as they may not be able to distinguish you from the shooter.</string>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="call" translatesAutoresizingMaskIntoConstraints="NO" id="awd-fX-hcl">
+                                                <rect key="frame" x="121.66666666666669" y="1230.6666666666667" width="150" height="150"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="150" id="IsO-2z-Zgc"/>
+                                                    <constraint firstAttribute="width" constant="150" id="XHt-5D-zLD"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="6oi-fw-2yT" firstAttribute="top" secondItem="mHC-o2-Y5w" secondAttribute="bottom" constant="10" id="3o5-vE-dHX"/>
+                                            <constraint firstItem="BNX-5h-6yt" firstAttribute="top" secondItem="6oi-fw-2yT" secondAttribute="bottom" constant="30" id="9HS-0A-S0R"/>
+                                            <constraint firstItem="XxG-bq-UaE" firstAttribute="top" secondItem="BNX-5h-6yt" secondAttribute="bottom" constant="10" id="BC6-YP-umT"/>
+                                            <constraint firstItem="awd-fX-hcl" firstAttribute="top" secondItem="ADb-gg-zTl" secondAttribute="bottom" constant="30" id="Cm7-AH-jTh"/>
+                                            <constraint firstItem="ADb-gg-zTl" firstAttribute="leading" secondItem="hZJ-bD-ol0" secondAttribute="leading" constant="20" id="ETQ-ra-c9k"/>
+                                            <constraint firstItem="fQi-fR-cNQ" firstAttribute="top" secondItem="hZJ-bD-ol0" secondAttribute="top" constant="20" id="HPf-uS-uFp"/>
+                                            <constraint firstItem="WK7-By-68X" firstAttribute="top" secondItem="awd-fX-hcl" secondAttribute="bottom" constant="10" id="I7L-wu-jfB"/>
+                                            <constraint firstItem="WK7-By-68X" firstAttribute="leading" secondItem="hZJ-bD-ol0" secondAttribute="leading" constant="20" id="LNm-zM-Aw8"/>
+                                            <constraint firstItem="fQi-fR-cNQ" firstAttribute="centerX" secondItem="hZJ-bD-ol0" secondAttribute="centerX" id="LYL-zc-ecm"/>
+                                            <constraint firstAttribute="trailing" secondItem="ADb-gg-zTl" secondAttribute="trailing" constant="20" id="NWP-dK-1cM"/>
+                                            <constraint firstItem="BNX-5h-6yt" firstAttribute="centerX" secondItem="hZJ-bD-ol0" secondAttribute="centerX" id="NcD-v7-nb0"/>
+                                            <constraint firstItem="mHC-o2-Y5w" firstAttribute="centerX" secondItem="hZJ-bD-ol0" secondAttribute="centerX" id="Psg-5m-fQr"/>
+                                            <constraint firstItem="XHR-AA-n23" firstAttribute="centerX" secondItem="hZJ-bD-ol0" secondAttribute="centerX" id="R91-PO-HON"/>
+                                            <constraint firstItem="WK7-By-68X" firstAttribute="top" secondItem="awd-fX-hcl" secondAttribute="bottom" constant="10" id="RYx-en-Pms"/>
+                                            <constraint firstItem="mHC-o2-Y5w" firstAttribute="top" secondItem="j0K-7Q-0Nq" secondAttribute="bottom" constant="30" id="Rec-3s-Hby"/>
+                                            <constraint firstAttribute="trailing" secondItem="XxG-bq-UaE" secondAttribute="trailing" constant="20" id="SfI-ZM-7qf"/>
+                                            <constraint firstItem="XxG-bq-UaE" firstAttribute="top" secondItem="BNX-5h-6yt" secondAttribute="bottom" constant="10" id="Sym-uU-oNM"/>
+                                            <constraint firstItem="j0K-7Q-0Nq" firstAttribute="leading" secondItem="hZJ-bD-ol0" secondAttribute="leading" constant="30" id="b9H-F7-PXK"/>
+                                            <constraint firstAttribute="trailing" secondItem="j0K-7Q-0Nq" secondAttribute="trailing" constant="30" id="eSO-T4-gmC"/>
+                                            <constraint firstAttribute="trailing" secondItem="WK7-By-68X" secondAttribute="trailing" constant="20" id="gs8-1c-16c"/>
+                                            <constraint firstItem="ADb-gg-zTl" firstAttribute="top" secondItem="XHR-AA-n23" secondAttribute="bottom" constant="10" id="hgb-ML-GYV"/>
+                                            <constraint firstItem="6oi-fw-2yT" firstAttribute="leading" secondItem="hZJ-bD-ol0" secondAttribute="leading" constant="20" id="kQJ-r7-eFl"/>
+                                            <constraint firstAttribute="trailing" secondItem="6oi-fw-2yT" secondAttribute="trailing" constant="20" id="lwZ-ok-6MF"/>
+                                            <constraint firstItem="XHR-AA-n23" firstAttribute="top" secondItem="XxG-bq-UaE" secondAttribute="bottom" constant="30" id="nSk-MV-rPI"/>
+                                            <constraint firstItem="awd-fX-hcl" firstAttribute="centerX" secondItem="hZJ-bD-ol0" secondAttribute="centerX" id="pSk-Nd-raq"/>
+                                            <constraint firstItem="j0K-7Q-0Nq" firstAttribute="top" secondItem="fQi-fR-cNQ" secondAttribute="bottom" constant="20" id="sNK-BX-5Ou"/>
+                                            <constraint firstAttribute="height" constant="1700" id="tbr-p7-YrG"/>
+                                            <constraint firstItem="XxG-bq-UaE" firstAttribute="leading" secondItem="hZJ-bD-ol0" secondAttribute="leading" constant="20" id="vIl-qp-gwP"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="hZJ-bD-ol0" firstAttribute="leading" secondItem="IrB-US-6QU" secondAttribute="leading" id="CIf-xz-eYe"/>
+                                    <constraint firstItem="hZJ-bD-ol0" firstAttribute="bottom" secondItem="IrB-US-6QU" secondAttribute="bottom" id="Sky-wh-9fW"/>
+                                    <constraint firstItem="hZJ-bD-ol0" firstAttribute="trailing" secondItem="IrB-US-6QU" secondAttribute="trailing" id="lnP-Xs-mDa"/>
+                                    <constraint firstItem="hZJ-bD-ol0" firstAttribute="top" secondItem="IrB-US-6QU" secondAttribute="top" id="zWg-P4-eMJ"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Igl-E4-Wer"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="IrB-US-6QU" firstAttribute="leading" secondItem="Igl-E4-Wer" secondAttribute="leading" id="bqh-4n-jRd"/>
+                            <constraint firstItem="IrB-US-6QU" firstAttribute="top" secondItem="Igl-E4-Wer" secondAttribute="top" id="c3q-Wd-sTI"/>
+                            <constraint firstItem="hZJ-bD-ol0" firstAttribute="width" secondItem="ctC-rw-lZl" secondAttribute="width" id="gyW-ZP-HqZ"/>
+                            <constraint firstItem="IrB-US-6QU" firstAttribute="bottom" secondItem="Igl-E4-Wer" secondAttribute="bottom" id="qYF-f0-5Xe"/>
+                            <constraint firstItem="IrB-US-6QU" firstAttribute="trailing" secondItem="Igl-E4-Wer" secondAttribute="trailing" id="r9i-PF-Xgf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="QSM-Bf-tWj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9Yd-Zq-9Mf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4543" y="1320"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="zWl-8F-f9U"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="call" width="512" height="512"/>
         <image name="ellipsis" catalog="system" width="128" height="37"/>
+        <image name="fight" width="512" height="512"/>
+        <image name="hide" width="600" height="338"/>
         <image name="map.fill" catalog="system" width="128" height="110"/>
         <image name="note.text" catalog="system" width="128" height="107"/>
+        <image name="run" width="612" height="527"/>
         <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
