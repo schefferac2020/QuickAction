@@ -4,6 +4,14 @@
 <dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Please give us access to use your camera</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>WE NEED IT</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We will need ya Location</string>
+	<key>CFBundleDocumentTypes</key>
+	<array>
+		<dict/>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
