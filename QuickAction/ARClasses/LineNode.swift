@@ -14,7 +14,7 @@ class LineNode: NSObject, NSCopying {
     
     let good_orange = UIColor(red: 251/255, green: 147/255, blue: 0/255, alpha: 1.0)
     
-    var node_scale = 1/400.0
+    var node_scale = 1/150.0
     
     let startNode: SCNNode
     let endNode: SCNNode
