@@ -1,5 +1,7 @@
 # QuickAction
 
+![00000](https://user-images.githubusercontent.com/54146662/219953018-5f1eef03-468b-4432-8741-c9b90b9078e2.png)
+
 ## Inspiration
 Our team was largely inspired by the tragic events of the MSU active shooting incident. This event brought to light how our current systems to handle these devastating events can often lead to misinformation, distrust, and inefficiency.
 
