@@ -7,28 +7,17 @@
 
 import UIKit
 import FirebaseCore
-import FirebaseMessaging
+
 import Firebase
-import UserNotifications
+
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate{
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
         
-        Messaging.messaging().delegate = self
-        UNUserNotificationCenter.current().delegate = self
-        
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { success, _ in
-            guard success else {
-                return
-            }
-            
-            print("Success in APNS registry")
-        }
-        
-        application.registerForRemoteNotifications()
+      
         
         return true
     }
@@ -47,15 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate, UNUser
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
     
-    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        messaging.token { token, _ in
-            guard let token = token else {
-                return
-            }
-            
-            print("Token : \(token)")
-        }
-    }
+
 
 
 }

@@ -257,7 +257,7 @@
                                 <rect key="frame" x="16" y="509" width="361" height="128"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mount" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tiX-8Z-XQE">
-                                        <rect key="frame" x="0.0" y="-0.6666666666666714" width="128" height="129.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="-0.6666666666666714" width="128" height="129.66666666666666"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="128" id="IPJ-Ik-gdH"/>
                                         </constraints>
@@ -294,10 +294,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="Gaw-vB-A8J"/>
                     <connections>
+                        <outlet property="ARNavigationLabel" destination="3YN-D9-e6V" id="Bck-9R-6KX"/>
                         <outlet property="reportIncidentUILabel" destination="Jxk-MH-fOK" id="eSM-Gg-PXl"/>
                         <outlet property="reportStatusUILabel" destination="A9X-I6-uaK" id="bIU-Nh-GoT"/>
                         <segue destination="k66-ot-Ev0" kind="show" identifier="ReportIncidentSegue" id="gvB-jj-xog"/>
                         <segue destination="W3W-xd-4mh" kind="show" identifier="ReportFormSegue" id="V09-lh-b3P"/>
+                        <segue destination="2L4-2C-cr8" kind="show" identifier="ARSegue" id="ZCY-Oo-0u7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="srR-Ei-1gL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -313,7 +315,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ViE-NH-lDV">
-                                <rect key="frame" x="40" y="89" width="313" height="600"/>
+                                <rect key="frame" x="40" y="133" width="313" height="600"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Of-B9-SEP">
                                         <rect key="frame" x="5" y="20" width="66" height="21"/>
@@ -606,16 +608,109 @@
             </objects>
             <point key="canvasLocation" x="-1254.1984732824426" y="-321.12676056338029"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="vqS-Qg-27h">
+            <objects>
+                <viewController id="2L4-2C-cr8" customClass="ViewController" customModule="QuickAction" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="t2s-pU-k57">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="rqA-qn-h75">
+                                <rect key="frame" x="315" y="571" width="66" height="158"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oxe-8K-p41" customClass="RoundedButton" customModule="QuickAction" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="66" height="66"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="66" id="7FM-7w-5fs"/>
+                                            <constraint firstAttribute="height" constant="66" id="7Ro-Hh-eAA"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal">
+                                            <color key="titleColor" systemColor="systemOrangeColor"/>
+                                            <imageReference key="image" image="square.and.arrow.up" catalog="system" symbolScale="large"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="shareButtonPressed:" destination="2L4-2C-cr8" eventType="touchUpInside" id="qx2-3n-muI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TaE-5z-2Rp" customClass="RoundedButton" customModule="QuickAction" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="66" height="66"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="66" id="lue-cz-LAo"/>
+                                            <constraint firstAttribute="height" constant="66" id="zLp-cl-MxS"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal">
+                                            <color key="titleColor" systemColor="systemOrangeColor"/>
+                                            <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="redoButtonPressed:" destination="2L4-2C-cr8" eventType="touchUpInside" id="1Yd-0X-AyR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" spacing="47" translatesAutoresizingMaskIntoConstraints="NO" id="OGI-FO-Grc">
+                                <rect key="frame" x="315" y="752" width="66" height="66"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7vf-mV-DNN" customClass="RoundedButton" customModule="QuickAction" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="66" height="66"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="66" id="AMx-uw-G8A"/>
+                                            <constraint firstAttribute="height" constant="66" id="f27-jm-g4M"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal">
+                                            <color key="titleColor" systemColor="systemOrangeColor"/>
+                                            <imageReference key="image" image="ellipsis" catalog="system" symbolScale="large"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="moreButtonPressed:" destination="2L4-2C-cr8" eventType="touchUpInside" id="2y6-uO-6t3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="LPV-5U-tUi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="LPV-5U-tUi" firstAttribute="bottom" secondItem="OGI-FO-Grc" secondAttribute="bottom" id="57U-Wv-DC4"/>
+                            <constraint firstItem="OGI-FO-Grc" firstAttribute="centerX" secondItem="t2s-pU-k57" secondAttribute="centerX" id="GYb-zb-MYd"/>
+                            <constraint firstItem="LPV-5U-tUi" firstAttribute="trailing" secondItem="OGI-FO-Grc" secondAttribute="trailing" constant="12" id="kac-QT-vJm"/>
+                            <constraint firstItem="7vf-mV-DNN" firstAttribute="top" secondItem="rqA-qn-h75" secondAttribute="bottom" constant="23" id="tch-NU-u7J"/>
+                            <constraint firstItem="LPV-5U-tUi" firstAttribute="trailing" secondItem="rqA-qn-h75" secondAttribute="trailing" constant="12" id="uCz-hQ-cE8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="8jr-64-DJk"/>
+                    <connections>
+                        <outlet property="horizStack" destination="OGI-FO-Grc" id="j77-Ve-zxW"/>
+                        <outlet property="moreButton" destination="7vf-mV-DNN" id="tlQ-ei-jep"/>
+                        <outlet property="redoButton" destination="TaE-5z-2Rp" id="tE2-YB-zVQ"/>
+                        <outlet property="shareButton" destination="Oxe-8K-p41" id="BrW-AZ-jl3"/>
+                        <outlet property="vertStack" destination="rqA-qn-h75" id="0q2-Sb-g6f"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zPJ-AH-m9u" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6295.419847328244" y="-420.42253521126764"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="yzz-VD-eTG"/>
-        <segue reference="efS-Pj-OGJ"/>
+        <segue reference="V09-lh-b3P"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
         <image name="fireplace" catalog="system" width="128" height="103"/>
         <image name="hockey.puck.fill" catalog="system" width="128" height="98"/>
         <image name="location.north.line" catalog="system" width="84" height="128"/>
         <image name="mount" catalog="system" width="116" height="128"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

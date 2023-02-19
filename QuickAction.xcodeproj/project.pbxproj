@@ -12,6 +12,9 @@
 		126FA8FA29A13D7C0045DD34 /* AmanStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 126FA8F929A13D7C0045DD34 /* AmanStoryboard.storyboard */; };
 		12C41C9029A0DA1D002493B5 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12C41C8F29A0DA1D002493B5 /* RegisterViewController.swift */; };
 		1324A58D2139548068766DF8 /* Pods_QuickAction.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B869A61A711387937179F04 /* Pods_QuickAction.framework */; };
+		661BAF0529A170C30045532D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661BAF0429A170C30045532D /* HomeViewController.swift */; };
+		66C769C629A17C520040AF9C /* StatusReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C769C529A17C520040AF9C /* StatusReportViewController.swift */; };
+		66C769C929A1C9600040AF9C /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C769C829A1C9600040AF9C /* StatusViewController.swift */; };
 		C376D78729A0B80000B4E659 /* LineGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C376D78529A0B80000B4E659 /* LineGroup.swift */; };
 		C376D78829A0B80000B4E659 /* LineNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C376D78629A0B80000B4E659 /* LineNode.swift */; };
 		C376D79329A0B81900B4E659 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C376D78B29A0B81900B4E659 /* Utilities.swift */; };
@@ -26,15 +29,14 @@
 		C376D79F29A0B82000B4E659 /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = C376D79D29A0B82000B4E659 /* FocusSquare.swift */; };
 		C376D7A129A0B82E00B4E659 /* Konstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C376D7A029A0B82D00B4E659 /* Konstants.swift */; };
 		C376D7A329A0B83300B4E659 /* ObjectFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C376D7A229A0B83300B4E659 /* ObjectFactory.swift */; };
-		661BAF0529A170C30045532D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 661BAF0429A170C30045532D /* HomeViewController.swift */; };
-		66C769C629A17C520040AF9C /* StatusReportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C769C529A17C520040AF9C /* StatusReportViewController.swift */; };
-		66C769C929A1C9600040AF9C /* StatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C769C829A1C9600040AF9C /* StatusViewController.swift */; };
+		C3A2B35029A1D6C40057D3C0 /* Other.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A2B34F29A1D6C40057D3C0 /* Other.storyboard */; };
 		C3A972F529A0A7D9002FDDCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A972F429A0A7D9002FDDCE /* AppDelegate.swift */; };
 		C3A972F729A0A7D9002FDDCE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A972F629A0A7D9002FDDCE /* SceneDelegate.swift */; };
 		C3A972F929A0A7D9002FDDCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A972F829A0A7D9002FDDCE /* ViewController.swift */; };
 		C3A972FC29A0A7D9002FDDCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A972FA29A0A7D9002FDDCE /* Main.storyboard */; };
 		C3A972FE29A0A7DB002FDDCE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A972FD29A0A7DB002FDDCE /* Assets.xcassets */; };
 		C3A9730129A0A7DB002FDDCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3A972FF29A0A7DB002FDDCE /* LaunchScreen.storyboard */; };
+		C3DF828829A1891200AAEEA4 /* AuditoryGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3DF828729A1891200AAEEA4 /* AuditoryGuide.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,7 @@
 		C376D79D29A0B82000B4E659 /* FocusSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
 		C376D7A029A0B82D00B4E659 /* Konstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Konstants.swift; sourceTree = "<group>"; };
 		C376D7A229A0B83300B4E659 /* ObjectFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObjectFactory.swift; sourceTree = "<group>"; };
+		C3A2B34F29A1D6C40057D3C0 /* Other.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Other.storyboard; sourceTree = "<group>"; };
 		C3A972F129A0A7D9002FDDCE /* QuickAction.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuickAction.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A972F429A0A7D9002FDDCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3A972F629A0A7D9002FDDCE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 		C3A972FD29A0A7DB002FDDCE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3A9730029A0A7DB002FDDCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C3DB24B129A0BE8400F4EDA4 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C3DF828729A1891200AAEEA4 /* AuditoryGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuditoryGuide.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,8 @@
 				C3A972F629A0A7D9002FDDCE /* SceneDelegate.swift */,
 				C3A972F829A0A7D9002FDDCE /* ViewController.swift */,
 				C3A972FA29A0A7D9002FDDCE /* Main.storyboard */,
+				C3A2B34F29A1D6C40057D3C0 /* Other.storyboard */,
+				C3DF828729A1891200AAEEA4 /* AuditoryGuide.swift */,
 				C3DB24B129A0BE8400F4EDA4 /* Info.plist */,
 				C376D79B29A0B82000B4E659 /* Focus Squares */,
 				12C41C8F29A0DA1D002493B5 /* RegisterViewController.swift */,
@@ -178,7 +184,6 @@
 				C376D7A229A0B83300B4E659 /* ObjectFactory.swift */,
 				C3A972FF29A0A7DB002FDDCE /* LaunchScreen.storyboard */,
 				C376D78929A0B81900B4E659 /* Extentions */,
-				C3A9730229A0A7DB002FDDCE /* Info.plist */,
 				1231F83029A0BC4500D07FF2 /* GoogleService-Info.plist */,
 				1231F83229A0CCEF00D07FF2 /* LoginViewController.swift */,
 				126FA8F929A13D7C0045DD34 /* AmanStoryboard.storyboard */,
@@ -254,6 +259,7 @@
 				C3A972FE29A0A7DB002FDDCE /* Assets.xcassets in Resources */,
 				C3A972FC29A0A7D9002FDDCE /* Main.storyboard in Resources */,
 				126FA8FA29A13D7C0045DD34 /* AmanStoryboard.storyboard in Resources */,
+				C3A2B35029A1D6C40057D3C0 /* Other.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,6 +315,7 @@
 				C376D79729A0B81900B4E659 /* SceneExtensions.swift in Sources */,
 				C376D7A329A0B83300B4E659 /* ObjectFactory.swift in Sources */,
 				C376D79329A0B81900B4E659 /* Utilities.swift in Sources */,
+				C3DF828829A1891200AAEEA4 /* AuditoryGuide.swift in Sources */,
 				C376D79629A0B81900B4E659 /* LineExtention.swift in Sources */,
 				C376D79829A0B81900B4E659 /* UIExtentions.swift in Sources */,
 				C376D79F29A0B82000B4E659 /* FocusSquare.swift in Sources */,
@@ -403,7 +410,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -457,7 +464,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

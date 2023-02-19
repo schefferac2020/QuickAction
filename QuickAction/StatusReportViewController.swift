@@ -10,7 +10,7 @@ import FirebaseFirestore
 
 import CoreLocation
 
-class StatusReportViewController: UIViewController, CLLocationManagerDelegate {
+class StatusReportViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
 
     @IBOutlet weak var LocationTextField: UITextField!
     
@@ -76,8 +76,24 @@ class StatusReportViewController: UIViewController, CLLocationManagerDelegate {
             locationManager.startUpdatingLocation()
         }
         
+        LocationTextField.delegate = self
+        RoomNumberTextField.delegate = self
+        FloorTextField.delegate = self
+        NumberOfPeopleTextField.delegate = self
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         
-        
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
+    //Calls this function when the tap is recognized.
+    @objc func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -102,6 +118,8 @@ class StatusReportViewController: UIViewController, CLLocationManagerDelegate {
         print("done")
         
     }
+    
+    
     
 
     /*

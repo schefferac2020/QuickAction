@@ -13,6 +13,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var reportIncidentUILabel: UILabel!
     
+    @IBOutlet weak var ARNavigationLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,7 @@ class HomeViewController: UIViewController {
         reportStatusUILabel.isUserInteractionEnabled = true
         
         reportIncidentUILabel.isUserInteractionEnabled = true
+        ARNavigationLabel.isUserInteractionEnabled = true
         
         let tapGesture1 = UITapGestureRecognizer(target: self, action: #selector(labelTapped(_:)))
         reportStatusUILabel.addGestureRecognizer(tapGesture1)
@@ -29,8 +31,11 @@ class HomeViewController: UIViewController {
         let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(labelTapped(_:)))
         reportIncidentUILabel.addGestureRecognizer(tapGesture2)
         
+        let tapGesture3 = UITapGestureRecognizer(target: self, action: #selector(labelTapped(_:)))
+        ARNavigationLabel.addGestureRecognizer(tapGesture3)
+        
     }
-    
+
     @objc func labelTapped(_ sender: UITapGestureRecognizer) {
         guard let label = sender.view as? UILabel else {
             return
@@ -42,6 +47,10 @@ class HomeViewController: UIViewController {
         
         if label == reportIncidentUILabel {
             performSegue(withIdentifier: "ReportIncidentSegue", sender: self)
+        }
+        
+        if (label == ARNavigationLabel) {
+            performSegue(withIdentifier: "ARSegue", sender: self)
         }
         
     }
