@@ -111,7 +111,9 @@ class StatusReportViewController: UIViewController, CLLocationManagerDelegate, U
                         "floor" : floor,
                         "roomNumber": roomNumber,
                         "location" : location,
-                        "isBarricaded": isBarricaded])
+                        "isBarricaded": isBarricaded,
+                        "safe": false,
+                        "time": Date.now])
 
         
 

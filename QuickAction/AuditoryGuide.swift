@@ -36,9 +36,6 @@ class AuditoryGuide {
         
         //print("The distance is \(distance_to_next_waypoint)")
         if (distance_to_next_waypoint < self.threshold){
-            
-            
-            
             //get the direction (left right straight) to the next waypoint
             
             if (current_line - 1 >= 0){
@@ -50,8 +47,6 @@ class AuditoryGuide {
 
             current_line += 1
         }
-        
-        
     }
     
     func GetAngleBetweenTwoLines(node1: LineNode, node2: LineNode) -> CGFloat{
