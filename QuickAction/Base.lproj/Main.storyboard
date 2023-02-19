@@ -292,6 +292,7 @@
                     <connections>
                         <segue destination="IfP-aQ-17b" kind="show" identifier="ActiveShooterSegue" id="Zyu-9E-Yc7"/>
                         <segue destination="aU1-Zv-g5l" kind="show" identifier="FirstAidSegue" id="GH5-nq-pRk"/>
+                        <segue destination="nGh-RI-U6O" kind="show" identifier="PoliceUpdatesSegue" id="3Pt-OI-biv"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUK-IP-Adi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -323,8 +324,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iyc-MN-gIN">
-                                <rect key="frame" x="133" y="548" width="127" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iyc-MN-gIN">
+                                <rect key="frame" x="133" y="482.33333333333331" width="127" height="49.999999999999943"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="127" id="jxA-0g-nOQ"/>
+                                    <constraint firstAttribute="height" constant="50" id="rxd-Md-I6V"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled">
                                     <attributedString key="attributedTitle">
@@ -350,9 +355,8 @@
                                     <action selector="SubmitButton:" destination="W3W-xd-4mh" eventType="touchUpInside" id="av5-t0-lrK"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A 911 Operator has recived your information. Stay where you are untill you recieve a call back with further instructions" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFl-3F-g8T">
-                                <rect key="frame" x="29" y="166" width="334" height="230"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A 911 Operator has recived your information. Stay where you are untill you recieve a call back with further instructions" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFl-3F-g8T">
+                                <rect key="frame" x="30" y="153" width="333" height="229.33333333333337"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -361,7 +365,13 @@
                         <viewLayoutGuide key="safeArea" id="TQC-0g-Xtv"/>
                         <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <constraints>
+                            <constraint firstItem="DFl-3F-g8T" firstAttribute="centerX" secondItem="hKo-Pd-DCU" secondAttribute="centerX" id="8lP-z8-d2a"/>
+                            <constraint firstItem="DFl-3F-g8T" firstAttribute="top" secondItem="TQC-0g-Xtv" secondAttribute="top" constant="50" id="AfA-1h-9Dd"/>
+                            <constraint firstAttribute="trailing" secondItem="DFl-3F-g8T" secondAttribute="trailing" constant="30" id="G8J-GX-TDd"/>
+                            <constraint firstItem="Iyc-MN-gIN" firstAttribute="top" secondItem="DFl-3F-g8T" secondAttribute="bottom" constant="100" id="OoP-8b-2aS"/>
                             <constraint firstItem="Iyc-MN-gIN" firstAttribute="centerX" secondItem="hKo-Pd-DCU" secondAttribute="centerX" id="exw-U6-7xO"/>
+                            <constraint firstItem="Iyc-MN-gIN" firstAttribute="centerX" secondItem="hKo-Pd-DCU" secondAttribute="centerX" id="g6U-8T-iQi"/>
+                            <constraint firstItem="DFl-3F-g8T" firstAttribute="leading" secondItem="hKo-Pd-DCU" secondAttribute="leading" constant="30" id="gDg-2Z-20U"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jkb-TK-3Kr"/>
@@ -616,7 +626,44 @@ Provide emotional support: In addition to providing physical first aid, it's als
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qkr-aL-ktG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4543" y="2026"/>
+            <point key="canvasLocation" x="4543" y="2051"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3YM-wy-wfh">
+            <objects>
+                <viewController id="nGh-RI-U6O" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="88b-6i-VZw">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="There are no police updates at this time" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VwT-w8-U4f">
+                                <rect key="frame" x="20" y="193.66666666666666" width="353" height="60"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Police Updates" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1o9-Sp-uMG">
+                                <rect key="frame" x="78.000000000000014" y="133" width="237.33333333333337" height="40.666666666666657"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="o1n-Z9-ozg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1o9-Sp-uMG" firstAttribute="top" secondItem="o1n-Z9-ozg" secondAttribute="top" constant="30" id="5dt-r9-Zqs"/>
+                            <constraint firstItem="o1n-Z9-ozg" firstAttribute="trailing" secondItem="VwT-w8-U4f" secondAttribute="trailing" constant="20" id="G2s-s5-Nqr"/>
+                            <constraint firstItem="VwT-w8-U4f" firstAttribute="top" secondItem="1o9-Sp-uMG" secondAttribute="bottom" constant="20" id="I2l-Ym-xtl"/>
+                            <constraint firstItem="1o9-Sp-uMG" firstAttribute="centerX" secondItem="88b-6i-VZw" secondAttribute="centerX" id="PTY-r1-9CR"/>
+                            <constraint firstItem="VwT-w8-U4f" firstAttribute="leading" secondItem="o1n-Z9-ozg" secondAttribute="leading" constant="20" id="gJa-iS-u78"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="9RM-5b-WhQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RyS-4i-pCr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4542.7480916030536" y="2788.7323943661972"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="X0a-cA-8hc">

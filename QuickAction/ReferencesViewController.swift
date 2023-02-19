@@ -15,7 +15,7 @@ class ReferencesViewController: UICollectionViewController {
     
     let dataSource: [CategoryInfo] = [CategoryInfo(name: "First Aid", color: .red), CategoryInfo(name: "Active Shooter", color: .lightGray), CategoryInfo(name: "Police Updates", color: .lightGray)]
     
-    var segue_map = ["First Aid": "FirstAidSegue", "Active Shooter": "ActiveShooterSegue", "Police Updates": "ActiveShooterSegue"]
+    var segue_map = ["First Aid": "FirstAidSegue", "Active Shooter": "ActiveShooterSegue", "Police Updates": "PoliceUpdatesSegue"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
