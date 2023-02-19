@@ -11,10 +11,9 @@ import FirebaseFirestore
 class StatusViewController: UIViewController {
 
     
-    @IBOutlet weak var StatusUIView: UIView!
-    
     let collection = Firestore.firestore().collection("Report")
     
+    @IBOutlet weak var messageLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,34 +29,26 @@ class StatusViewController: UIViewController {
 
             // Check the value of the document
             if let value = document.data()?["safe"] as? Bool{
-                // Change the screen color here
-               
-                
-                
                 if value == true {
                     print("HEYYYYYYYYYYYY IT CHANGED TO TRUE")
-                    self.StatusUIView.backgroundColor = .green
+                    self.view.backgroundColor = .init(red: 43/255.0, green: 173/255.0, blue: 15/255.0, alpha: 1)
+                    self.messageLabel.text = "Law inforcement has indicated that it is safe to leave your current location. Police escorts are on their way"
                 }
                 
                 if value == false {
                     print("HEYYYYYYYYYYYY IT CHANGED TO TRUE")
-                    self.StatusUIView.backgroundColor = .orange
+                    self.view.backgroundColor = .orange
                 }
             }
         }
-
-        // Do any additional setup after loading the view.
+        
+        self.navigationController?.navigationBar.tintColor = .white;
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func EmergencyCaller(_ sender: Any) {
+        if let url = URL(string: "tel://1232") {
+           UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
-    */
-
 }

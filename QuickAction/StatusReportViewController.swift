@@ -63,7 +63,10 @@ class StatusReportViewController: UIViewController, CLLocationManagerDelegate, U
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        //Navigation Title
+        self.title = "Report"
+        self.navigationItem.largeTitleDisplayMode = .always
+        self.navigationController?.navigationBar.prefersLargeTitles = true;
         
         NumberOfPeopleTextField.keyboardType = .decimalPad
         
@@ -75,6 +78,8 @@ class StatusReportViewController: UIViewController, CLLocationManagerDelegate, U
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
+        
+        
         
         LocationTextField.delegate = self
         RoomNumberTextField.delegate = self

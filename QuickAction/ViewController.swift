@@ -62,6 +62,12 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         
         super.viewDidLoad()
+        
+        //Navigation Bar setup
+        self.title = "AR Wayfinder"
+        self.navigationItem.largeTitleDisplayMode = .always
+        self.navigationController?.navigationBar.prefersLargeTitles = true;
+        
         layout_view()
         setUpAndRunConfiguration()
         
@@ -83,7 +89,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         let textSize = toastLbl.intrinsicContentSize
         let labelWidth = min(textSize.width, width - 80)
         
-        toastLbl.frame = CGRect(x: 20, y: 90, width: labelWidth+20, height: textSize.height+50)
+        toastLbl.frame = CGRect(x: 20, y: 170, width: labelWidth+20, height: textSize.height+50)
         toastLbl.center.x = view.center.x
         toastLbl.layer.cornerRadius = 10
         toastLbl.layer.masksToBounds = true
@@ -133,10 +139,13 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         let width = view.bounds.width
         let height = view.bounds.height
-        view.backgroundColor = UIColor.black
+        view.backgroundColor = UIColor.white
         
         view.addSubview(sceneView)
-        sceneView.frame = view.bounds
+        sceneView.frame = CGRect(x: view.bounds.minX + 10, y: view.bounds.minY + 150, width: view.bounds.width - 20, height: view.bounds.height - 250)
+        sceneView.layer.cornerRadius = 10
+        sceneView.layer.masksToBounds = true
+        sceneView.clipsToBounds = true
         sceneView.delegate = self
         sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints] //Shows the feature points
         sceneView.autoenablesDefaultLighting = true
@@ -165,6 +174,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         redoButton.isHidden = true
         shareButton.isHidden = true
+        moreButton.isHidden = true
         
         SetupToast()
     }
