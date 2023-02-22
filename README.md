@@ -29,23 +29,3 @@ Another accomplishment that we are really proud of is **our method of transferri
 
 ## What we learned
 Our team had no shortage of interesting frameworks to learn or problems to tackle. In fact, some of our members were introduced into IOS development for the first time this weekend! Additionally, our team made strides in git version control, and a plethora of new frameworks needed to create a full-stack application.
-
-## What's next for Quick Action
-Although we have accomplished a lot in 36 we are certainly not short of ideas to implement for future developments.
-
-Here are some ideas we have:
-
-<u>More robust evacuation plans:</u> enabling the app to be used for different types of emergencies, such as fires, earthquakes, or active shooter situations.
-
-<u>Hazard reporting:</u> The app can allow users to report hazards or other safety concerns in real-time, which can help to alert emergency responders and other users to potential risks.
-
-<u>Including more accessibility features:</u> Everything from have multilingual support to making it accessible for others with disabilities.
-
-<u>Making indor tracking more robust:</u> although vision has seved us well with this application having access to wifi based positing migh help in situations where vision fails.
-
-<u>Privacy and security features:</u> The app can include strong privacy and security features to protect user data and ensure that sensitive information is only accessible to authorized personnel.
-
-The business plan moving forward
-Our vision is to empower and provide safety to individuals with vision impairments and the wider community during emergency situations such as fires or shooter threats. Our team is passionate about the potential of this app to make a significant positive impact on society thereby we will move forward as a sustainable non-profit organization. we are committed to ensuring that our emergency navigation and notification app is accessible and affordable for everyone.
-
-To achieve this goal, we plan to explore various funding opportunities, including grants and donations from government agencies, private foundations, and individual donors who share our mission of providing safety and inclusivity for all. Additionally, we will seek out corporate sponsorships to help us reduce backend costs and maximize the impact of our app, and we believe that with the right funding and support, we can bring it to life. Together, we can create a safer and more inclusive community, where everyone feels empowered to navigate emergency situations with confidence and ease.
