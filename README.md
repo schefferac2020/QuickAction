@@ -1,6 +1,12 @@
-# [QuickAction](https://youtu.be/JFAROM2cqHY)
+# QuickAction (MHacks 2023)
+
+A disaster safety system that used Augmented Reality to provide accessible location information to users and law enforcement in times of need.
+
+[Video Demo](https://youtu.be/JFAROM2cqHY)
 
 ![00000](https://user-images.githubusercontent.com/54146662/219953018-5f1eef03-468b-4432-8741-c9b90b9078e2.png)
+
+"Our team has always dreamed of creating a full-stack Augmented Reality application. However, to make that dream come true over the past 36 hours, our team members have been having significantly fewer dreams than usual."
 
 ## Inspiration
 Our team was largely inspired by the tragic events of the MSU active shooting incident. This event brought to light how our current systems to handle these devastating events can often lead to misinformation, distrust, and inefficiency.
